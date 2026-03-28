@@ -187,6 +187,9 @@ Recommended:
 
 CrewAI allows selecting different models per agent, which enables this optimization
 
+##  Acknowledgements
+
+Inspired by the adversary emulation methodology presented in the SANS SEC565 workshop by [Jean-François Maes](https://jfmaes.me)
 
 
 
