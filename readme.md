@@ -4,7 +4,6 @@ This project builds an **agent-driven threat intelligence pipeline** that ingest
 
 Instead of manually reading reports, extracting TTPs, and mapping them to ATT&CK, this system automates the process using **multi-agent orchestration (CrewAI)** with strict grounding and validation rules.
 
----
 
 ## What It Does
 
@@ -16,7 +15,6 @@ Given a set of threat intelligence reports (PDFs):
 - Maps behaviors to **MITRE ATT&CK techniques**  
 - Generates a structured **threat profile report**  
 
----
 
 ## Architecture
 
@@ -47,7 +45,6 @@ Given a set of threat intelligence reports (PDFs):
         └───────────────────────────┘
 
 
----
 
 ## Key Design Decisions
 
@@ -59,7 +56,6 @@ Each PDF is processed independently to avoid:
 - cross-source contamination  
 - hallucinated correlations  
 
----
 
 ### 2. Grounded Extraction (No Inference)
 
@@ -69,7 +65,6 @@ Agents are explicitly instructed to:
 - Avoid assumptions or inferred techniques  
 - Prefer omission over weak or ambiguous findings  
 
----
 
 ### 3. ATT&CK Mapping Discipline
 
@@ -79,7 +74,6 @@ Mappings must:
 - Use valid MITRE ATT&CK technique IDs and names  
 - Avoid forcing mappings when evidence is weak  
 
----
 
 ### 4. Separation of Responsibilities
 
@@ -92,7 +86,6 @@ Each agent has a **single focused role**:
 | Mapper | Map to MITRE ATT&CK |
 | Aggregator | Generate final report |
 
----
 
 ## Example Output
 
@@ -105,13 +98,11 @@ The pipeline produces a structured threat profile including:
 - MITRE ATT&CK Mapping Table  
 - Red Team Emulation Indicators  
 
----
 
 ## Sample:
 
 - generated threat profile for APT29: [View Sample Report](outputs/apt29_threat_profile.md)
 
----
 
 ## Why This Project Matters
 
@@ -128,7 +119,6 @@ This project focuses on:
 - ✅ Operational usefulness (red team ready)  
 - ✅ Agent-based architecture (not just prompts)  
 
----
 
 ## Current Limitations
 
@@ -137,7 +127,6 @@ This project focuses on:
 - No ATT&CK validation against official dataset  
 - PDF-only ingestion (no live intel feeds)  
 
----
 
 ## Next Steps (Planned)
 
@@ -147,7 +136,6 @@ This project focuses on:
 - IOC normalization & export  
 - SIEM detection rule generation  
 
----
 
 ## How to Run
 
@@ -160,11 +148,11 @@ python main.py
 
 - The first run will create a folder:  
   /threat-intel/<APT_NAME>/  
-
 - The program will exit after creating the folder  
 - Add your PDF reports into that folder  
 - Run the script again  
 - The generated APT emulation report will be saved in the same directory  
+
 
 ### Configuration
 
@@ -172,14 +160,12 @@ python main.py
 - Choose your model in the get_llm() function  
 - Change the target APT via the THREAT_ACTOR variable
 
----
 
 ### Notes:
 - Processing PDFs can be token intensive  
 - Use a lighter model for extraction  
 - Use a stronger model for analysis  
-
-CrewAI allows selecting different models per agent, which enables this optimization
+- CrewAI allows selecting different models per agent, which enables this optimization
 
 ##  Acknowledgements
 
