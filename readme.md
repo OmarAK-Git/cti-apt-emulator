@@ -1,5 +1,5 @@
 # Automated Threat Intelligence Pipeline (APT Emulation)
-> Agent-based pipeline that transforms raw threat intelligence into ATT&CK-aligned, red-team-ready emulation profiles
+> Agent-based pipeline that transforms raw threat intelligence into ATT&CK-aligned, red-team-ready emulation profiles.
 This project builds an **agent-driven threat intelligence pipeline** that ingests real-world CTI reports and produces structured, **MITRE ATT&CK-aligned threat profiles** for red team emulation.
 
 Instead of manually reading reports, extracting TTPs, and mapping them to ATT&CK, this system automates the process using **multi-agent orchestration (CrewAI)** with strict grounding and validation rules.
