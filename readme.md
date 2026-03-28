@@ -1,5 +1,5 @@
-# 🧠 Automated Threat Intelligence Pipeline (APT Emulation)
-
+# Automated Threat Intelligence Pipeline (APT Emulation)
+> Agent-based pipeline that transforms raw threat intelligence into ATT&CK-aligned, red-team-ready emulation profiles
 This project builds an **agent-driven threat intelligence pipeline** that ingests real-world CTI reports and produces structured, **MITRE ATT&CK-aligned threat profiles** for red team emulation.
 
 Instead of manually reading reports, extracting TTPs, and mapping them to ATT&CK, this system automates the process using **multi-agent orchestration (CrewAI)** with strict grounding and validation rules.
@@ -109,7 +109,7 @@ The pipeline produces a structured threat profile including:
 
 ## Sample:
 
-- generated threat profile for APT29: outputs/apt29_threat_profile.md
+- generated threat profile for APT29: [View Sample Report](outputs/apt29_threat_profile.md)
 
 ---
 
@@ -151,8 +151,10 @@ This project focuses on:
 
 ## How to Run
 
-pip install -r requirements.txt  
-python main.py  
+```bash
+pip install -r requirements.txt
+python main.py
+```
 
 ### First Run Behavior
 
@@ -169,7 +171,7 @@ The generated APT emulation report will be saved in the same directory
 
 ## Configuration
 
-- Add your preferred LLM API key to the .env file  
+- Add your preferred LLM API key to a .env file  
 - Choose your model in the get_llm() function  
 - Change the target APT via the THREAT_ACTOR variable  
 
