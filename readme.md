@@ -164,24 +164,18 @@ python main.py
 - The program will exit after creating the folder  
 - Add your PDF reports into that folder  
 - Run the script again  
+- The generated APT emulation report will be saved in the same directory  
 
-The generated APT emulation report will be saved in the same directory  
-
----
-
-## Configuration
+### Configuration
 
 - Add your preferred LLM API key to a .env file  
 - Choose your model in the get_llm() function  
-- Change the target APT via the THREAT_ACTOR variable  
+- Change the target APT via the THREAT_ACTOR variable
 
 ---
 
-### Notes
-
+### Notes:
 - Processing PDFs can be token intensive  
-
-Recommended:
 - Use a lighter model for extraction  
 - Use a stronger model for analysis  
 
